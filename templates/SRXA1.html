@@ -1,0 +1,44 @@
+<link href="css/Light.css" rel="stylesheet"type="text/css">
+<style>
+table {
+    width:100%;
+}
+table,th {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+th{
+    padding: 2px;
+    text-align: medium;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #ffffff;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#ffffff;
+}
+table#t01 th {
+    background-color: #cfeef7;
+    color: #064557;
+}
+table#t01 th {
+    background-color: #dfdfdf;
+    color: #064557;
+}
+</style>
+</head>
+<table id="t01">
+    <th style="color:#064557;font-size:80%;">{{ device }}</th> 
+	 {% for key,value in ports %}
+    <th style="color:#064557;font-size:70%;">{{ key }}</th>
+	 {% endfor %}
+<tr>
+    <th style="color:#064557;font-size:80%;">{{ links }}</th>
+		 {% for key,value in link %}
+		 {% if value == 'up' %}
+		    <th><div class="led-green"></div></th> 
+			{% else %}
+			<th><div class="led-red"></div></th>
+			{% endif %}
+		 {% endfor %}		 
+</table>
